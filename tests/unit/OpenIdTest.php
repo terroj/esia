@@ -25,7 +25,7 @@ class OpenIdTest extends Unit
     /**
      * @throws \Esia\Exceptions\InvalidConfigurationException
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->config = [
             'clientId' => 'INSP03211',
@@ -172,7 +172,7 @@ class OpenIdTest extends Unit
     public function testBuildLogoutUrlWithRedirect(): void
     {
         $config = $this->openId->getConfig();
-        
+
         $redirectUrl = 'test.example.com';
         $url = $config->getLogoutUrl() . '?client_id=' . $config->getClientId() . '&redirect_url=' . $redirectUrl;
         $logoutUrl = $this->openId->buildLogoutUrl($redirectUrl);
