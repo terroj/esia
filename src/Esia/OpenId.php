@@ -148,9 +148,9 @@ class OpenId
 
         $clientSecret = $this->signer->sign(
             $this->config->getScopeString()
-            . $timestamp
-            . $this->config->getClientId()
-            . $state
+                . $timestamp
+                . $this->config->getClientId()
+                . $state
         );
 
         $body = [
@@ -319,7 +319,8 @@ class OpenId
             $prev = $e->getPrevious();
 
             // Only for Guzzle
-            if ($prev instanceof BadResponseException
+            if (
+                $prev instanceof BadResponseException
                 && $prev->getResponse() !== null
                 && $prev->getResponse()->getStatusCode() === 403
             ) {

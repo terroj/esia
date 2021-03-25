@@ -5,6 +5,7 @@ namespace tests\unit;
 use Esia\Config;
 use Esia\OpenId;
 use Esia\Signer\CliSignerPKCS7;
+use Esia\Signer\Exceptions\SignFailException;
 use GuzzleHttp\Psr7\Response;
 
 class OpenIdCliOpensslTest extends OpenIdTest
